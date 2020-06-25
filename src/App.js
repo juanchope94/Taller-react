@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Persona from './components/persona/persona';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      persona: {
+        nombre: 'cesar camilo',
+        apellido: 'loaiza daza',
+        edad: 30
+      }
+    }
+  }
+  cambiarName(){
+    this.setState({persona: {...this.state.persona, nombre:"juan"}})
+  }
+  render() {
+    
+    return (
+      <div >
+       <Persona datos={this.state.persona}/>
+       <button onClick={()=>this.cambiarName()}>Cambiar nombre</button>
+      </div>
+
+    );
+  }
 }
 
 export default App;

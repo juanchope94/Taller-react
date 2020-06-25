@@ -1,0 +1,5 @@
+instalar create: npm install -g create-react-app
+crear un proyecto: create-react-app mi-proyecto
+para correr el proyecto: npm start
+
+https://styled-css-grid.js.org/
